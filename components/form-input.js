@@ -19,7 +19,10 @@ const FormInput = forwardRef(({ label, error, className, id, required, ...props 
       <Input
         id={inputId}
         ref={ref}
-        className={cn(error && "border-destructive focus-visible:ring-destructive")}
+        className={cn(
+          "border-2 border-gray-700 rounded-md focus:border-primary focus:ring-1 focus:ring-primary",
+          error && "border-destructive focus:border-destructive focus:ring-1 focus:ring-destructive"
+        )}
         {...props}
       />
       {error && <p className="text-sm text-destructive">{error}</p>}
